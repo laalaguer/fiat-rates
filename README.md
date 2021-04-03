@@ -1,15 +1,13 @@
 # Fiat Rates
-Get fiat rates, eg. EUR/USD. Updates daily
+Get fiat rates, eg. EUR/USD, CNY/CAD. Updates daily.
 
-Since `exchangeratesapi.io` limits free account to only EUR based.
-
-And `1000` requests per month.
+Since `exchangeratesapi.io` limits free account to only `EUR` based rates and `1000` requests per month.
 
 I create this open source project to give you a free format api.
 
 # API
 
-### Get a rate
+### GET a rate
 ```
 GET /fiat?symbol=CNY&base=USD
 
@@ -20,13 +18,13 @@ GET /fiat?symbol=CNY&base=USD
 }
 ```
 
-### Get supported symbols
+### GET supported pairs
 
 ```
 GET /supported
 ```
 
-### Refresh database (admin)
+### Refresh rates database (admin)
 
 ```
 GET /refresh?password={...}
