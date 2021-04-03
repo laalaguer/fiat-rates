@@ -21,7 +21,7 @@ func (ff *FiatFetcher) Get(base string, access_key string, proxyURL string) (suc
 	url := fmt.Sprintf(
 		"http://api.exchangeratesapi.io/v1/latest?base=%s&access_key=%s",
 		strings.ToUpper(base),
-		strings.ToUpper(access_key))
+		access_key)
 	body := Scrap(url, proxyURL, nil)
 
 	// Scrap failed. HTTP error
@@ -45,7 +45,7 @@ func (ff *FiatFetcher) Get(base string, access_key string, proxyURL string) (suc
 		if jsonErr != nil {
 			log.Fatal(jsonErr)
 		}
-		log.Fatal("error message", r.Error.Code, r.Error.Message)
+		log.Fatal(fmt.Sprintf("error message: %s %s", r.Error.Code, r.Error.Message))
 		return false, nil, ExchangeRatesAPIRespones{Success: false}
 	}
 
