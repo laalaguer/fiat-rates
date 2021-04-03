@@ -30,8 +30,4 @@ GET /supported
 
 ```
 GET /refresh?password={...}
-
-{
-    "success": true // failed then false
-}
 ```
