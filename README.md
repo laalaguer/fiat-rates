@@ -11,11 +11,8 @@ I create this open source project to give you a free format api.
 ```
 GET /fiat?symbol=CNY&base=USD
 
-{
-    "symbol": "CNY",
-    "base": "USD",
-    "rate": 0.123 // If not supported return -1
-}
+0.123 // If not supported return -1
+
 ```
 
 ### GET supported pairs
